@@ -37,7 +37,7 @@ Previa is a digital healthcare platform that helps people stay healthy before th
 
 1. Clone the repository
 ```
-git clone https://github.com/yourusername/previa.git
+git clone https://github.com/yourusername/previa.git](https://github.com/Jivit87/NEUTRON_TEAM_DOMINATOR.git
 cd previa
 ```
 
@@ -103,7 +103,3 @@ preventive-health-app/
 4. Over time, the AI analyzes patterns and generates insights
 5. Users receive personalized suggestions to improve their health
 6. The dashboard displays trends and progress
-
-## License
-
-This project is licensed under the MIT License. 
