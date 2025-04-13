@@ -198,7 +198,7 @@ export default function HealthLog() {
         }, 2000);
       } catch (err) {
         console.log('Retrying with absolute URL');
-        await axios.post('http://localhost:8080/api/health-logs', payload);
+        await axios.post('https://neutron-team-dominator.onrender.com/api/health-logs', payload);
         setSuccess(true);
         
         setTimeout(() => {

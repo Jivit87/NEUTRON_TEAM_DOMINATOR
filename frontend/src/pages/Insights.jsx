@@ -24,7 +24,7 @@ export default function Insights() {
       console.log('Fetching insights...');
       
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8080/api/insights', {
+      const res = await axios.get('https://neutron-team-dominator.onrender.com/api/insights', {
         headers: {
           Authorization: `Bearer ${token}`
         }

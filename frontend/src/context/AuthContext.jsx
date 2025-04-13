@@ -6,7 +6,7 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 const isDevelopment = process.env.NODE_ENV === 'development';
-const API_BASE_URL = isDevelopment ? 'http://localhost:8080' : '';
+const API_BASE_URL = isDevelopment ? 'https://neutron-team-dominator.onrender.com' : '';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

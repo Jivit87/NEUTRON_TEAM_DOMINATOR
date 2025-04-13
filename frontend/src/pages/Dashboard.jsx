@@ -45,7 +45,7 @@ export default function Dashboard() {
         
         try {
     
-          const logsRes = await axios.get('http://localhost:8080/api/health-logs');
+          const logsRes = await axios.get('https://neutron-team-dominator.onrender.com');
           const logs = logsRes.data.data;
           
           if (logs && logs.length > 0) {
@@ -111,7 +111,7 @@ export default function Dashboard() {
         }
         
         try {
-          const insightsRes = await axios.get('http://localhost:8080/api/insights');
+          const insightsRes = await axios.get('https://neutron-team-dominator.onrender.com');
           if (insightsRes.data.data.message) {
             setInsights([]);
           } else {
