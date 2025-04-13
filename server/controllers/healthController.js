@@ -9,7 +9,7 @@ exports.analyzeHealth = async (req, res) => {
 
     const healthMetrics = await analyzeImage(req.file || req.body.image);
     
-    const userId = req.user ? req.user._id : '645a1d7e1f8f09a1ec489f12'; // Demo user ID
+    const userId = req.user ? req.user._id : '645a1d7e1f8f09a1ec489f12'; 
     
     const healthData = new HealthData({
       userId,
