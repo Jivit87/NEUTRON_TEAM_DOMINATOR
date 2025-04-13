@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
@@ -25,18 +26,18 @@ const WebcamCapture = () => {
     setError(null);
     
     try {
-    
+      // Convert base64 image to blob for upload
       const base64Data = image.replace(/^data:image\/jpeg;base64,/, '');
       const blob = await (await fetch(`data:image/jpeg;base64,${base64Data}`)).blob();
       
       const formData = new FormData();
       formData.append('image', blob, 'capture.jpg');
-      const response = await axios.post('https://neutron-team-dominator.onrender.com/api/analyze', formData, {
+      
+      const response = await axios.post('/api/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      console.log('Analysis results:', response.data);
       
       setResults(response.data);
     } catch (err) {
@@ -90,23 +91,23 @@ const WebcamCapture = () => {
           <h2>Your Health Metrics</h2>
           <div className="metrics-grid">
             <div className="metric-card">
-              <h3>Mood</h3>
-              <p className="metric-value">{results.mood} <span></span></p>
+              <h3>Heart Rate</h3>
+              <p className="metric-value">{results.heartRate} <span>bpm</span></p>
               <p className="metric-status">{results.heartRateStatus}</p>
             </div>
             <div className="metric-card">
-              <h3>Relaxation Level</h3>
-              <p className="metric-value">{results.relaxationLevel} <span></span></p>
+              <h3>Respiratory Rate</h3>
+              <p className="metric-value">{results.respiratoryRate} <span>rpm</span></p>
               <p className="metric-status">{results.respiratoryRateStatus}</p>
             </div>
             <div className="metric-card">
-              <h3>Fatigue Level</h3>
-              <p className="metric-value">{results.fatigueLevel}<span>/10</span></p>
+              <h3>Oxygen Saturation</h3>
+              <p className="metric-value">{results.oxygenSaturation}<span>%</span></p>
               <p className="metric-status">{results.oxygenSaturationStatus}</p>
             </div>
             <div className="metric-card">
               <h3>Stress Level</h3>
-              <p className="metric-value">{results.stressLevel}<span>/10</span></p>
+              <p className="metric-value">{results.stressLevel}</p>
               <p className="metric-status">{results.stressLevelStatus}</p>
             </div>
           </div>
