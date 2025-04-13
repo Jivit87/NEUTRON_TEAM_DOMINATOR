@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: "https://neutron-team-dominator-1.onrender.com",
+    port: 3000,
     proxy: {
       '/api': {
         target: 'https://neutron-team-dominator.onrender.com',

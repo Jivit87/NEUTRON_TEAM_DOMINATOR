@@ -190,7 +190,7 @@ export default function HealthLog() {
       console.log('Submitting health log:', payload);
       
       try {
-        await axios.post('/api/health-logs', payload);
+        await axios.post('https://neutron-team-dominator.onrender.com/api/health-logs', payload);
         setSuccess(true);
         
         setTimeout(() => {
@@ -896,7 +896,7 @@ export default function HealthLog() {
                         />
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                           </svg>
                         </div>
                       </div>

@@ -31,7 +31,7 @@ const WebcamCapture = () => {
       
       const formData = new FormData();
       formData.append('image', blob, 'capture.jpg');
-      const response = await axios.post('https://neutron-team-dominator.onrender.com/api/analyze' ,formData, {
+      const response = await axios.post('https://neutron-team-dominator.onrender.com/api/analyze', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

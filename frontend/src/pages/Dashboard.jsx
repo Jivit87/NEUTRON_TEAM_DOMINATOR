@@ -45,7 +45,7 @@ export default function Dashboard() {
         
         try {
     
-          const logsRes = await axios.get('https://neutron-team-dominator.onrender.com');
+          const logsRes = await axios.get('https://neutron-team-dominator.onrender.com/api/health-logs');
           const logs = logsRes.data.data;
           
           if (logs && logs.length > 0) {
@@ -111,7 +111,7 @@ export default function Dashboard() {
         }
         
         try {
-          const insightsRes = await axios.get('https://neutron-team-dominator.onrender.com');
+          const insightsRes = await axios.get('https://neutron-team-dominator.onrender.com/api/insights');
           if (insightsRes.data.data.message) {
             setInsights([]);
           } else {
